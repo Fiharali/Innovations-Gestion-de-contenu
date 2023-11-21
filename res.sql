@@ -49,3 +49,8 @@ CREATE table plate_ingredients (
         Foreign Key (ingredient_id) REFERENCES ingredients(id) ON DELETE CASCADE on UPDATE cascade
     )
 
+
+
+
+
+
