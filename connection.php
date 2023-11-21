@@ -5,11 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
 	<script src="https://cdn.lordicon.com/lordicon-1.3.0.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-700">
@@ -67,6 +70,11 @@
 			</ul>
 		</div>
 	</aside>
-	<nav class="bg-white border-gray-200 dark:bg-gray-900 ml-64 text-slate-50">
+	<nav class="bg-white border-gray-200 dark:bg-gray-900 sm:ml-64 text-slate-50 sticky top-0 z-50">
 		ali
+		<br>
 	</nav>
+	<?php
+	$conn = mysqli_connect("localhost", "root", "", "res");
+
+	?>
