@@ -11,6 +11,46 @@ require_once 'connection.php';
 $sql = "SELECT * FROM chefs";
 $result = $conn->query($sql);
 
+if (isset($_POST['submit'])) {
+	if (!empty($_POST['name']) && !empty($_POST['age'])) {
+		$name = $_POST['name'];
+		$age = $_POST['age'];
+		$stmt = "INSERT INTO chefs(name, age) VALUES ('$name', '$age')";
+		mysqli_query($conn, $stmt);
+		$_POST['name'] = "";
+		$_POST['age'] = "";
+		$check = "success";
+		$result = $conn->query($sql);
+	} else {
+		$check = "error";
+	}
+}
+
+if (isset($_POST['submitUpdate'])) {
+	if (!empty($_POST['name']) && !empty($_POST['age'])) {
+		$name = $_POST['name'];
+		$age = $_POST['age'];
+		$id = $_POST['id'];
+		$stmt = "update  chefs set  name='$name', age='$age' where id=$id";
+		mysqli_query($conn, $stmt);
+		$_POST['name'] = "";
+		$_POST['age'] = "";
+		$check = "success";
+		$result = $conn->query($sql);
+	} else {
+		$check = "error";
+	}
+}
+
+if (isset($_POST['delete'])) {
+	$id = $_POST['id'];
+	$stmt = "delete from chefs  where id=$id";
+	mysqli_query($conn, $stmt);
+	$result = $conn->query($sql);
+?>
+
+<?php
+}
 ?>
 
 
@@ -84,7 +124,7 @@ $result = $conn->query($sql);
 						<button type="button" data-modal-target="updateModal<?= $row['id'] ?>" data-modal-toggle="updateModal<?= $row['id'] ?>" type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Update</button>
 						<form method="post">
 							<input type="hidden" name="id" value="<?= $row['id'] ?>" />
-							<input type="submit" name="delete" value="delete" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+							<input type="submit" name="delete" onclick="return confirm('Are you sure?')" value="delete" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
 						</form>
 					</td>
 				</tr>
@@ -128,49 +168,8 @@ $result = $conn->query($sql);
 	</table>
 
 	<?php
-	if (isset($_POST['submit'])) {
-		if (!empty($_POST['name']) && !empty($_POST['age'])) {
-			$name = $_POST['name'];
-			$age = $_POST['age'];
-			$stmt = "INSERT INTO chefs(name, age) VALUES ('$name', '$age')";
-			mysqli_query($conn, $stmt);
-			$_POST['name'] = "";
-			$_POST['age'] = "";
-			$check = "success";
-		} else {
-			$check = "error";
-			// $_POST['submit'] = false;
 
-		}
-	}
 
-	if (isset($_POST['submitUpdate'])) {
-		if (!empty($_POST['name']) && !empty($_POST['age'])) {
-			$name = $_POST['name'];
-			$age = $_POST['age'];
-			$id = $_POST['id'];
-			$stmt = "update  chefs set  name='$name', age='$age' where id=$id";
-			mysqli_query($conn, $stmt);
-			$_POST['name'] = "";
-			$_POST['age'] = "";
-			$check = "success";
-		} else {
-			$check = "error";
-			// $_POST['submit'] = false;
-
-		}
-	}
-
-	if (isset($_POST['delete'])) {
-		$id = $_POST['id'];
-		$stmt = "delete from chefs  where id=$id";
-		mysqli_query($conn, $stmt);
-	}
-	// if (mysqli_query($conn, $stmt)) {
-	// 	$check = "success";
-	// } else {
-	// 	$check = "error";
-	// }
 
 
 	?>

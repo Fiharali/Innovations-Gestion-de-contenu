@@ -9,28 +9,37 @@
 
 
 <script>
-	let jsCheck = <?php
-					echo json_encode($check);
-					?>;
-	console.log(jsCheck);
-	if (jsCheck == 'success') {
-		Swal.fire({
-			title: 'successfully!',
-			text: ' insertion successfully',
-			icon: 'success',
-			confirmButtonText: 'ok'
-		})
-	} else if (jsCheck == 'error') {
-		Swal.fire({
-			title: 'Error!',
-			text: 'all champs are required',
-			icon: 'error',
-			confirmButtonText: 'ok'
-		})
-	} else {
+	let table = new DataTable('#myTable');
+
+
+	// let jsCheck = <?php
+						// 				echo json_encode($check);
+						// 				
+						?>;
+	// console.log(jsCheck);
+	// if (jsCheck == 'success') {
+	// 	Swal.fire({
+	// 		position: "top-end",
+	// 		icon: "success",
+	// 		title: "Your work has been saved",
+	// 		showConfirmButton: false,
+	// 		timer: 1500
+	// 	});
+	// } else if (jsCheck == 'error') {
+	// 	Swal.fire({
+	// 		position: "top-end",
+	// 		icon: "success",
+	// 		title: "Your work has been saved",
+	// 		showConfirmButton: false,
+	// 		timer: 1500
+	// 	});
+	// } else {
+
+	// }
+
+	function checkDelete() {
 
 	}
-	let table = new DataTable('#myTable');
 </script>
 </body>
 
