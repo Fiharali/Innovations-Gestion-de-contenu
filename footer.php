@@ -9,33 +9,42 @@
 
 
 <script>
-	let table = new DataTable('#myTable');
+	let table = new DataTable('#myTable', {
+		// paging: false,
+		// scrollCollapse: true,
+		// select: true,
+		// searching: false,
+		// ordering: false,
+		// scrollY: '400px'
+		// compact: true
+
+	});
 
 
-	// let jsCheck = <?php
-						// 				echo json_encode($check);
-						// 				
-						?>;
-	// console.log(jsCheck);
-	// if (jsCheck == 'success') {
-	// 	Swal.fire({
-	// 		position: "top-end",
-	// 		icon: "success",
-	// 		title: "Your work has been saved",
-	// 		showConfirmButton: false,
-	// 		timer: 1500
-	// 	});
-	// } else if (jsCheck == 'error') {
-	// 	Swal.fire({
-	// 		position: "top-end",
-	// 		icon: "success",
-	// 		title: "Your work has been saved",
-	// 		showConfirmButton: false,
-	// 		timer: 1500
-	// 	});
-	// } else {
+	let jsCheck = <?php
+					echo json_encode($check);
 
-	// }
+					?>;
+	console.log(jsCheck);
+	if (jsCheck == 'success') {
+		Swal.fire({
+			position: "top-end",
+			icon: "success",
+			title: "Your work has been saved",
+			showConfirmButton: false,
+			timer: 1500
+		});
+	} else if (jsCheck == 'error') {
+		Swal.fire({
+			position: "top-end",
+			icon: "success",
+			title: "Your work has been saved",
+			showConfirmButton: false,
+			timer: 1500
+		});
+	} else {
+
+	}
 
 	function checkDelete() {
 

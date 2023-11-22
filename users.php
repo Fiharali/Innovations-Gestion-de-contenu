@@ -55,7 +55,7 @@ if (isset($_POST['delete'])) {
 
 
 
-<div class="relative overflow-x-auto  sm:rounded-lg sm:ml-64 w2/3 px-32 mt-10">
+<div class="relative overflow-x-auto  sm:rounded-lg sm:ml-64 w2/3 px-32  mt-10">
 	<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
 		<div class="relative p-4 w-full max-w-2xl max-h-full">
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-900">
@@ -91,10 +91,10 @@ if (isset($_POST['delete'])) {
 		</div>
 	</div>
 	<button data-modal-target="default-modal" data-modal-toggle="default-modal" type="button" class="text-white float-right  bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter</button>
-	<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400  text-center" id="myTable">
+	<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400  sm:mx-auto" id="myTable">
 		<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 			<tr>
-				<th scope="col" class="px-6 py-3">
+				<th scope="col" class="px-6 py-3 ">
 					Id
 				</th>
 				<th scope="col" class="px-6 py-3">
@@ -111,7 +111,7 @@ if (isset($_POST['delete'])) {
 		<tbody>
 			<?php while ($row = $result->fetch_assoc()) { ?>
 				<tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
 						<?= $row['id'] ?>
 					</th>
 					<td class="px-6 py-4">
@@ -121,7 +121,7 @@ if (isset($_POST['delete'])) {
 						<?= $row['age'] ?>
 					</td>
 					<td class="px-6 py-4 flex ml-auto">
-						<button type="button" data-modal-target="updateModal<?= $row['id'] ?>" data-modal-toggle="updateModal<?= $row['id'] ?>" type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Update</button>
+						<button type="button" data-modal-target="updateModal<?= $row['id'] ?>" data-modal-toggle="updateModal<?= $row['id'] ?>" type="button" class="text-white justify-center  bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Update</button>
 						<form method="post">
 							<input type="hidden" name="id" value="<?= $row['id'] ?>" />
 							<input type="submit" name="delete" onclick="return confirm('Are you sure?')" value="delete" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
