@@ -21,19 +21,12 @@ if ($_SESSION['lang'] == 'en') {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script>
-		// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark')
-		}
-	</script>
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-700">
@@ -48,7 +41,7 @@ if ($_SESSION['lang'] == 'en') {
 			<h1 class="text-center text-2xl dark:text-slate-50  text-gray-500  p-5">LOGO</h1>
 			<ul class="space-y-2 font-medium">
 				<li>
-					<a href="index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="../index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['dashboard'] ?></span>
@@ -57,7 +50,7 @@ if ($_SESSION['lang'] == 'en') {
 
 
 				<li>
-					<a href="users.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/mebvgwrs.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['users'] ?></span>
@@ -65,7 +58,7 @@ if ($_SESSION['lang'] == 'en') {
 				</li>
 
 				<li>
-					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="views/chefs/chefs.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/knfxypdv.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3">Chefs</span>

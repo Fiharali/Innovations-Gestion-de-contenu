@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once '../../partials/connection.php';
 
 ?>
 
@@ -201,6 +201,6 @@ if (isset($_GET['searchSubmit'])) {
 
 </div>
 <?php
-require_once 'footer.php';
+require_once '../../partials/footer.php';
 
 ?>

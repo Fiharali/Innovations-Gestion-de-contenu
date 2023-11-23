@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once 'partials/connection.php';
 
 ?>
 
@@ -16,6 +16,6 @@ require_once 'connection.php';
 
 <?php
 
-require_once 'footer.php';
+require_once 'partials/footer.php';
 
 ?>
