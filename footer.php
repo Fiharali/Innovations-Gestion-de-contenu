@@ -9,20 +9,21 @@
 
 
 <script>
-	let table = new DataTable('#myTable', {
-		// paging: false,
-		// scrollCollapse: true,
-		// select: true,
-		// searching: false,
-		// ordering: false,
-		// scrollY: '400px'
-		// compact: true
+	// let table = new DataTable('#myTable', {
+	// 	// paging: false,
+	// 	// scrollCollapse: true,
+	// 	// select: true,
+	// 	// searching: false,
+	// 	// ordering: false,
+	// 	// scrollY: '400px'
+	// 	// compact: true
 
-	});
+	// });
 
 
 	let jsCheck = <?php
 					echo json_encode($check);
+
 
 					?>;
 	console.log(jsCheck);
