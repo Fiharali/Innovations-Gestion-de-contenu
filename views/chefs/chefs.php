@@ -2,58 +2,7 @@
 
 require_once '../../partials/connection.php';
 
-?>
-
-<?php
-
-$sql = "SELECT * FROM chefs";
-$result = $conn->query($sql);
-
-if (isset($_POST['submit'])) {
-	if (!empty($_POST['name']) && !empty($_POST['age'])) {
-		$name = $_POST['name'];
-		$age = $_POST['age'];
-		$stmt = "INSERT INTO chefs(name, age) VALUES ('$name', '$age')";
-		mysqli_query($conn, $stmt);
-		$_POST['name'] = "";
-		$_POST['age'] = "";
-		$check = "success";
-		$result = $conn->query($sql);
-	} else {
-		$check = "error";
-	}
-}
-
-if (isset($_POST['submitUpdate'])) {
-	if (!empty($_POST['name']) && !empty($_POST['age'])) {
-		$name = $_POST['name'];
-		$age = $_POST['age'];
-		$id = $_POST['id'];
-		$stmt = "update  chefs set  name='$name', age='$age' where id=$id";
-		mysqli_query($conn, $stmt);
-		$_POST['name'] = "";
-		$_POST['age'] = "";
-		$check = "success";
-		$result = $conn->query($sql);
-	} else {
-		$check = "error";
-	}
-}
-
-if (isset($_POST['delete'])) {
-	$id = $_POST['id'];
-	$stmt = "delete from chefs  where id=$id";
-	mysqli_query($conn, $stmt);
-	$result = $conn->query($sql);
-}
-
-if (isset($_GET['searchSubmit'])) {
-	$searshWord = $_GET['searchInput'];
-	$stmt = "select *  from chefs  where id like '%$searshWord%' or name like '%$searshWord%' or age like '%$searshWord%'";
-	mysqli_query($conn, $stmt);
-	$result = $conn->query($stmt);
-}
-
+require_once 'chefController.php';
 
 ?>
 
@@ -117,7 +66,6 @@ if (isset($_GET['searchSubmit'])) {
 		<tbody>
 
 			<?php
-
 			if (mysqli_num_rows($result) > 0) {
 				while ($row = $result->fetch_assoc()) {
 			?>
@@ -181,7 +129,6 @@ if (isset($_GET['searchSubmit'])) {
 				<?php }
 			} else {
 				?>
-
 				<tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
 					<th colspan="5" class=" px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
 						<?php echo  $lang['data'] ?>
@@ -189,16 +136,9 @@ if (isset($_GET['searchSubmit'])) {
 				</tr>
 			<?php
 			}
-
-
 			?>
 		</tbody>
 	</table>
-	<!-- </div> -->
-
-	<!-- </div> -->
-
-
 </div>
 <?php
 require_once '../../partials/footer.php';

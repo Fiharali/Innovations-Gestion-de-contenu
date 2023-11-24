@@ -41,7 +41,7 @@ if ($_SESSION['lang'] == 'en') {
 			<h1 class="text-center text-2xl dark:text-slate-50  text-gray-500  p-5">LOGO</h1>
 			<ul class="space-y-2 font-medium">
 				<li>
-					<a href="../index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="./../index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['dashboard'] ?></span>
