@@ -52,7 +52,7 @@ if ($_SESSION['lang'] == 'en') {
 
 
 				<li>
-					<a href="./views/users/user.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="/youcode/dash/views/users/user.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/mebvgwrs.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['users'] ?></span>
@@ -76,7 +76,7 @@ if ($_SESSION['lang'] == 'en') {
 				</li>
 
 				<li>
-					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="/youcode/dash/views/plate/plate.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/mwgfcdaj.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3">Plate</span>
