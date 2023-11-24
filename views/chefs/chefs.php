@@ -1,7 +1,7 @@
 <?php
 
-require_once '../../partials/connection.php';
-
+require_once '../../partials/navbar.php';
+require '../../database/connection.php';
 require_once 'chefController.php';
 
 ?>

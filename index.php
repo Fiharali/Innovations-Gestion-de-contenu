@@ -1,6 +1,7 @@
 <?php
 
-require_once 'partials/connection.php';
+require 'partials/navbar.php';
+
 
 ?>
 

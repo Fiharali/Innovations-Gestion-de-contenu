@@ -5,12 +5,14 @@ $_SESSION['lang'] = $_SESSION['lang'] ?? 'en';
 
 $_SESSION['lang'] = $_GET['lang'] ?? $_SESSION['lang'];
 
+// include '../database/connection.php';
 
 if ($_SESSION['lang'] == 'en') {
 	require 'lang/en.php';
 } else {
 	require 'lang/fr.php';
 }
+
 
 
 ?>
@@ -41,7 +43,7 @@ if ($_SESSION['lang'] == 'en') {
 			<h1 class="text-center text-2xl dark:text-slate-50  text-gray-500  p-5">LOGO</h1>
 			<ul class="space-y-2 font-medium">
 				<li>
-					<a href="./../index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="/youcode/dash/index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/eodavnff.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['dashboard'] ?></span>
@@ -50,7 +52,7 @@ if ($_SESSION['lang'] == 'en') {
 
 
 				<li>
-					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="./views/users/user.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/mebvgwrs.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['users'] ?></span>
@@ -58,7 +60,7 @@ if ($_SESSION['lang'] == 'en') {
 				</li>
 
 				<li>
-					<a href="views/chefs/chefs.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="/youcode/dash/views/chefs/chefs.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/knfxypdv.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3">Chefs</span>
@@ -196,7 +198,3 @@ if ($_SESSION['lang'] == 'en') {
 			</button>
 		</div>
 	</nav>
-	<?php
-	$conn = mysqli_connect("localhost", "root", "", "res");
-
-	?>
