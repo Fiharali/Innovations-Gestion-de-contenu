@@ -68,13 +68,20 @@ if ($_SESSION['lang'] == 'en') {
 				</li>
 
 				<li>
-					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="/youcode/dash/views/menu/menu.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/rztizmkk.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
-						<span class="ms-3">Plats</span>
+						<span class="ms-3">Menu</span>
 					</a>
 				</li>
 
+				<li>
+					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+						<lord-icon src="https://cdn.lordicon.com/mwgfcdaj.json" trigger="hover" style="width:25px;height:25px">
+						</lord-icon>
+						<span class="ms-3">Plate</span>
+					</a>
+				</li>
 				<li>
 					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/evvwiruv.json" trigger="hover" style="width:25px;height:25px">

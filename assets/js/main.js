@@ -62,30 +62,3 @@
 
 
 
-	// let jsCheck = <?php
-						// 				echo json_encode($check);
-
-
-						// 				
-						//?>;
-	// console.log(jsCheck);
-	// if (jsCheck == 'success') {
-	// 	Swal.fire({
-	// 		position: "top-end",
-	// 		icon: "success",
-	// 		title: "Your work has been saved",
-	// 		showConfirmButton: false,
-	// 		timer: 1500
-	// 	});
-	// } else if (jsCheck == 'error') {
-	// 	Swal.fire({
-	// 		position: "top-end",
-	// 		icon: "success",
-	// 		title: "Your work has been saved",
-	// 		showConfirmButton: false,
-	// 		timer: 1500
-	// 	});
-	// } else {
-
-	// }
-console.log("udggudgdu")
