@@ -29,6 +29,7 @@ if ($_SESSION['lang'] == 'en') {
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-700">
@@ -52,7 +53,7 @@ if ($_SESSION['lang'] == 'en') {
 
 
 				<li>
-					<a href="/youcode/dash/views/users/user.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+					<a href="#" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 						<lord-icon src="https://cdn.lordicon.com/mebvgwrs.json" trigger="hover" style="width:25px;height:25px">
 						</lord-icon>
 						<span class="ms-3"><?php echo  $lang['users'] ?></span>

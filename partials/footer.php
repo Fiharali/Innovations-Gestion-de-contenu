@@ -31,6 +31,7 @@
 
 	}
 </script>
+<!-- <script src="assets/js/plugins.js"></script> -->
 </body>
 
 </html>

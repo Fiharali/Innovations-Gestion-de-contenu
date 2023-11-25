@@ -11,6 +11,7 @@ $lang = [
 	'placeholderName' => 'Taper le Nom de  Chef',
 	'placeholderEmail' => 'Taper le Email de Chef',
 	'placeholderMenu' => ' le nom de menu',
+	'placeholderMenuPrice' => ' le prix de plate',
 	'dashboard' => 'Tableau',
 	'users' => 'Utilisateur',
 	'search' => 'chercher n importe quoi',

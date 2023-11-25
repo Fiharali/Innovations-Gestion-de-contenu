@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 		$name = $_POST['name'];
 		$price = $_POST['price'];
 		$menu = $_POST['selectMenu'];
-		$stmt = "INSERT INTO plate(name, menu_id,price) VALUES ('$name', $chef, $price)";
+		$stmt = "INSERT INTO plate(name, menu_id,price) VALUES ('$name', $menu, $price)";
 		mysqli_query($conn, $stmt);
 		$_POST['name'] = "";
 		$_POST['price'] = "";

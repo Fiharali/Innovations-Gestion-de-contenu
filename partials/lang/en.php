@@ -11,6 +11,7 @@ $lang = [
 	'placeholderName' => 'Type Chef name',
 	'placeholderEmail' => 'Type Chef Email',
 	'placeholderMenu' => ' Menu name',
+	'placeholderMenuPrice' => ' plate Price',
 	'dashboard' => 'dashboard',
 	'users' => 'Users',
 	'search' => 'search anything',

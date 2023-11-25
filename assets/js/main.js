@@ -62,3 +62,7 @@
 
 
 
+
+		// ApexCharts options and config
+	
+	
