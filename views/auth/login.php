@@ -3,27 +3,28 @@
 require '../../database/connection.php';
 
 if (isset($_POST['submit'])) {
-	if (!empty($_POST['email'])  && !empty($_POST['password']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-		$password = $_POST['password'];
-		$email = $_POST['email'];
-		$result = mysqli_query($conn, "select * from users where email = '$email'");
+    if (!empty($_POST['email']) && !empty($_POST['password']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $result = mysqli_query($conn, "select * from users where email = '$email'");
 
-		if (mysqli_num_rows($result) > 0) {
-			$checkUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
-			if (password_verify($password, $checkUser["password"])) {
+        if (mysqli_num_rows($result) > 0) {
+            $checkUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if (password_verify($password, $checkUser["password"])) {
+                // var_dump($checkUser['name']);
 				session_start();
-				$_SESSION['email'] = $email;
-				header("Location:../../index.php");
-				$check = "success";
-			} else {
-				$check = "error";
-			}
-		} else {
-			$check = "error";
-		}
-	} else {
-		$check = "error";
-	}
+                $_SESSION['name'] = $checkUser['name'];
+                header("Location:../../index.php");
+                $check = "success";
+            } else {
+                $check = "error";
+            }
+        } else {
+            $check = "error";
+        }
+    } else {
+        $check = "error";
+    }
 }
 
 ?>
@@ -130,8 +131,8 @@ if (isset($_POST['submit'])) {
 
 	<script>
 		let jsCheck = <?php
-						echo json_encode($check);
-						?>;
+echo json_encode($check);
+?>;
 		console.log(jsCheck);
 		if (jsCheck == 'success') {
 			Swal.fire({
