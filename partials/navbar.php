@@ -5,7 +5,7 @@ $_SESSION['lang'] = $_SESSION['lang'] ?? 'en';
 
 $_SESSION['lang'] = $_GET['lang'] ?? $_SESSION['lang'];
 
-// include '../database/connection.php';
+// require 'database\connection.php';
 
 if ($_SESSION['lang'] == 'en') {
 	require 'lang/en.php';
@@ -13,6 +13,11 @@ if ($_SESSION['lang'] == 'en') {
 	require 'lang/fr.php';
 }
 
+// session_destroy();
+// $_SESSION['email'] = "";
+if (empty($_SESSION['email'])) {
+	header("Location:/youcode/dash/views/auth/login.php");
+} 
 
 
 ?>
@@ -41,7 +46,7 @@ if ($_SESSION['lang'] == 'en') {
 	</button>
 	<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full md:translate-x-0" aria-label="Sidebar">
 		<div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-			<h1 class="text-center text-2xl dark:text-slate-50  text-gray-500  p-5">LOGO</h1>
+			<h1 class="text-center text-2xl dark:text-slate-50  text-gray-500  p-5"><?= isset($_SESSION['name']) ? $_SESSION['name'] : "LOGO" ?></h1>
 			<ul class="space-y-2 font-medium">
 				<li>
 					<a href="/youcode/dash/index.php" class="flex items-center p-3 m-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
