@@ -11,7 +11,7 @@ $resultMenu = $conn->query($menu);
 
 
 if (isset($_POST['submit'])) {
-	if (!empty($_POST['name'])) {
+	if (!empty($_POST['name'])&& !empty($_POST['selectChef'])) {
 		$name = $_POST['name'];
 		$chef = $_POST['selectChef'];
 		$stmt = "INSERT INTO menu(name, chef_id) VALUES ('$name', $chef)";

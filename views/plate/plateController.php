@@ -12,7 +12,7 @@ $resultMenu = $conn->query($plate);
 
 
 if (isset($_POST['submit'])) {
-	if (!empty($_POST['name']) && !empty($_POST['price'])) {
+	if (!empty($_POST['name']) && !empty($_POST['price'])&&  !empty($_POST['selectMenu'])) {
 		$name = $_POST['name'];
 		$price = $_POST['price'];
 		$menu = $_POST['selectMenu'];
