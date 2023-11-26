@@ -1,7 +1,15 @@
 <?php
-
+session_start();
 require '../../database/connection.php';
-
+if (!empty($_SESSION['name'])) {
+	if (isset($_SERVER['HTTP_REFERER'])) {
+		header("Location: " . $_SERVER['HTTP_REFERER']);
+		exit();
+	} else {
+		header("Location:/youcode/dash/index.php");
+		exit();
+	}
+}
 if (isset($_POST['submit'])) {
     if (!empty($_POST['email']) && !empty($_POST['password']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $password = $_POST['password'];
@@ -34,6 +42,9 @@ if (isset($_POST['submit'])) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Document</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
 	<style>
 		html {
 			height: 100%;
@@ -80,6 +91,7 @@ if (isset($_POST['submit'])) {
 			border-bottom: 1px solid #fff;
 			outline: none;
 			background: transparent;
+			box-shadow: none;
 		}
 
 		.login-box .user-box label {
@@ -101,14 +113,13 @@ if (isset($_POST['submit'])) {
 			font-size: 12px;
 		}
 	</style>
-	<title>Document</title>
 </head>
 
 <body>
 	<div class="">
 
 		<div class="login-box">
-			<h2>Login</h2>
+			<h2 class="text-3xl">Login</h2>
 			<form method="post">
 				<div class="user-box">
 					<input type="text" name="email" value="<?php echo isset($_POST['submit']) ? $_POST['email'] : ''; ?>">
@@ -119,16 +130,16 @@ if (isset($_POST['submit'])) {
 					<label>Password</label>
 				</div>
 				<div class="user-box">
-					<input type="submit" name="submit" value="Login">
+					<input type="submit" name="submit" value="Login" class="w-full p-2 m-6   text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700  border-2 border-white rounded-full dark:border-gray-800" >
 				</div>
-				you d'ont have account <a href="register.php">Here</a>
+				you d'ont have account <a href="register.php" class="ms-2 text-blue-500">Here</a>
 
 			</form>
 		</div>
 
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 	<script>
 		let jsCheck = <?php
 echo json_encode($check);
