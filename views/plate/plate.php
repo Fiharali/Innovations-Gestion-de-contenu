@@ -12,8 +12,6 @@ while ($chefRow = $resultChef->fetch_array()) {
 
 ?>
 
-
-
 <div class="relative overflow-x-auto  sm:rounded-lg md:ml-64 w2/3 md:px-32 mt-10">
 	<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
 		<div class="relative p-4 w-full max-w-2xl max-h-full">
@@ -39,7 +37,6 @@ while ($chefRow = $resultChef->fetch_array()) {
 							<div class=" sm:col-span-2">
 								<label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> <?php echo  $lang['ChefName'] ?></label>
 								<select name="selectMenu" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-								<option value="">Choose Menu</option>
 									<?php while ($row = $resultChefs->fetch_assoc()) {
 									?>
 										<option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
@@ -142,7 +139,7 @@ while ($chefRow = $resultChef->fetch_array()) {
 												<select name="selectMenu" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
 													<?php foreach ($chefRows as $chefRow) { ?>
 														<?php $isSelected = ($row['menu_id'] == $chefRow['id']) ? 'selected' : ''; ?>
-														<option value="<?= $chefRow['id'] ?>"  <?= $isSelected ?>> <?= $chefRow['name'] ?></option>
+														<option value="<?= $chefRow['id'] ?>" ><?= $chefRow['name'] ?></option>
 													<?php } ?>
 												</select>
 											</div>
