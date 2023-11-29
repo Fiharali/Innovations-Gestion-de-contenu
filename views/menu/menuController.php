@@ -1,14 +1,11 @@
-
 <?php
 
 $chefs = "SELECT * FROM chefs";
 $resultChefs = $conn->query($chefs);
 $resultChef = $conn->query($chefs);
 
-
 $menu = "SELECT menu.* , chefs.name as 'nomChef' FROM menu inner join chefs ON chefs.id = menu.chef_id";
 $resultMenu = $conn->query($menu);
-
 
 if (isset($_POST['submit'])) {
 	if (!empty($_POST['name'])&& !empty($_POST['selectChef'])) {
@@ -56,7 +53,11 @@ if (isset($_GET['searchSubmit'])) {
 	WHERE menu.id = '$searshWord' OR menu.name LIKE '%$searshWord%' OR chefs.name LIKE '%$searshWord%'";
 	mysqli_query($conn, $stmt);
 	$resultMenu = $conn->query($stmt);
+
+
 }
+
+
 
 
 ?>
